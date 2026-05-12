@@ -1,0 +1,32 @@
+llm:
+  provider: "openai"
+  model: "qwen3-max"
+  temperature: 0.0
+  api_key: "sk-d1b4f570ae5b42e99d1ad798d93d98ac"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+database:
+  default_dialect: "sqlite"
+  supported_dialects:
+    - "postgresql"
+    - "mysql"
+    - "sqlite"
+  connection:
+    host: "localhost"
+    port: 5432
+    database: "nl2sql_test"
+    user: "postgres"
+    password: "postgres"
+    sqlite_path: "nl2sql_test.db"
+
+security:
+  enable_sql_injection_check: true
+  max_query_depth: 10
+  allowed_operations:
+    - "SELECT"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+output_format: "plain"
